@@ -25,5 +25,6 @@ def test_delete_task(client):
     task_id_to_delete = list(tasks.keys())[0]
     response = client.post('/', data={'task_id_to_delete': task_id_to_delete, 'delete_task': True})
     assert response.status_code == 200
+    
     assert task_id_to_delete not in tasks
 
